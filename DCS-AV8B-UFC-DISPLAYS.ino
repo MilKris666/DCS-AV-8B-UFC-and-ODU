@@ -12,7 +12,7 @@ U8X8_SSD1322_NHD_256X64_4W_HW_SPI u8x8(10, 9, 8);
 U8X8_SSD1306_128X64_NONAME_HW_I2C oledComm1(U8X8_PIN_NONE);
 U8X8_SSD1306_128X64_NONAME_HW_I2C oledComm2(U8X8_PIN_NONE);
 
-// ** LED Konfiguration (⚠ Neue Pins: 5 & 6)**
+// ** LED Konfiguration (Neue Pins: 5 & 6)**
 DcsBios::LED mcLight(0x787c, 0x0004, 5);  // Master Caution → Pin 5
 DcsBios::LED mwLight(0x787c, 0x0008, 6);  // Master Warning → Pin 6
 
