@@ -12,7 +12,7 @@ U8X8_SSD1322_NHD_256X64_4W_HW_SPI u8x8(10, 9, 8);
 U8X8_SSD1306_128X64_NONAME_HW_I2C oledComm1(U8X8_PIN_NONE);
 U8X8_SSD1306_128X64_NONAME_HW_I2C oledComm2(U8X8_PIN_NONE);
 
-// ** LED Konfiguration ( Pins: 5 & 6)**
+// ** LED Konfiguration (⚠ Neue Pins: 5 & 6)**
 DcsBios::LED mcLight(0x787c, 0x0004, 5);  // Master Caution → Pin 5
 DcsBios::LED mwLight(0x787c, 0x0008, 6);  // Master Warning → Pin 6
 
@@ -61,7 +61,7 @@ void updateComm1Display() {
     if (strcmp(lastUfcComm1Text, ufcComm1Text) != 0) {
         strcpy(lastUfcComm1Text, ufcComm1Text);
         oledComm1.clearDisplay();
-        oledComm1.setFont(u8x8_font_amstrad_cpc_2x2_f);
+        oledComm1.setFont(u8x8_font_8x13B_1x2_f);  
         oledComm1.setCursor(2, 3);
         oledComm1.print(ufcComm1Text);
     }
@@ -72,7 +72,7 @@ void updateComm2Display() {
     if (strcmp(lastUfcComm2Text, ufcComm2Text) != 0) {
         strcpy(lastUfcComm2Text, ufcComm2Text);
         oledComm2.clearDisplay();
-        oledComm2.setFont(u8x8_font_amstrad_cpc_2x2_f);
+        oledComm2.setFont(u8x8_font_8x13B_1x2_f);  
         oledComm2.setCursor(2, 3);
         oledComm2.print(ufcComm2Text);
     }
@@ -83,7 +83,7 @@ void updateScratchpadDisplay() {
     if (strcmp(lastUfcScratchpadText, ufcScratchpadText) != 0) {
         strcpy(lastUfcScratchpadText, ufcScratchpadText);
         u8x8.clearDisplay();
-        u8x8.setFont(u8x8_font_8x13B_1x2_f);
+        u8x8.setFont(u8x8_font_8x13B_1x2_f);  
         u8x8.setCursor(0, 2);
         u8x8.print("                      "); 
         u8x8.setCursor(0, 2);
@@ -98,11 +98,11 @@ void setup() {
     oledComm1.begin();
     oledComm2.begin();
     
-    oledComm1.setFont(u8x8_font_amstrad_cpc_2x2_f);
-    oledComm2.setFont(u8x8_font_amstrad_cpc_2x2_f);
+    oledComm1.setFont(u8x8_font_8x13B_1x2_f);  
+    oledComm2.setFont(u8x8_font_8x13B_1x2_f);  
 
     u8x8.begin();
-    u8x8.setFont(u8x8_font_8x13B_1x2_f);
+    u8x8.setFont(u8x8_font_8x13B_1x2_f);  
 
     // ** Start-Nachrichten**
     oledComm1.setCursor(0, 1);
