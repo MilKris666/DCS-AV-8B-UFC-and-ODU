@@ -9,6 +9,7 @@ You need SSD1306 displays where the I²C address can be changed. Normally, SSD13
 If both displays have the same address, you can change one (e.g., via a solder pad). 
 
 SSD1322: https://www.amazon.de/OLED-Display-SSD1322-Grafik-LCD-Modul-Parallel-L%C3%B6tstift-wei%C3%9F/dp/B0DQ52MRX1?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A9KVXEOZANNPE
+
 SSD1306: https://www.amazon.de/AZDelivery-Display-Arduino-Raspberry-gratis/dp/B01L9GC470?th=1
 
 Make sure to use the latest version of DCS-BIOS Skunkworks.
