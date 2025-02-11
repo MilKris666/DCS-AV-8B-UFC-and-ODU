@@ -5,9 +5,9 @@ You need SSD1306 displays where the I²C address can be changed. Normally, SSD13
 
 **SSD1322 (SPI)** → show data from UFC Scratchpad Display
 
-**SSD1306 (I²C Address 0x3C)**→ shows data from UFC Comm1 Preset Display
+**SSD1306 (I²C Address 0x3C)** → shows data from UFC Comm1 Preset Display
 
-SSD1306 (I²C Address 0x3D)** → shows data from UFC Comm2 Preset Display
+**SSD1306 (I²C Address 0x3D)** → shows data from UFC Comm2 Preset Display
 
 For wiring, see the image **"PIN Connection.png"**.
 
