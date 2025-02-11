@@ -12,6 +12,8 @@ SSD1322: https://www.amazon.de/OLED-Display-SSD1322-Grafik-LCD-Modul-Parallel-L%
 
 SSD1306: https://www.amazon.de/AZDelivery-Display-Arduino-Raspberry-gratis/dp/B01L9GC470?th=1
 
+For wiring, see the image PIN Connection.png.
+
 Make sure to use the latest version of DCS-BIOS Skunkworks.
 
 The project is still a Work in Progress (WIP), meaning the 3D files for printing are not available yet. A Thingiverse link will be shared soon.
