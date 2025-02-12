@@ -119,7 +119,7 @@ void setup() {
     oledComm2.print(" ");
 
     u8x8.setCursor(0, 2);
-    u8x8.print("MILKRIS' UFC");
+    u8x8.print("UFC BY MILKRIS");
 
     delay(2000);
     updateComm1Display();
