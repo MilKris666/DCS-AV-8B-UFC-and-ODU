@@ -41,7 +41,7 @@ DcsBios::StringBuffer<2> ufcComm1DisplayBuffer(0x7954, onUfcComm1DisplayChange);
 void onUfcComm2DisplayChange(char* newValue) {
     if (strcmp(ufcComm2Text, newValue) != 0) {
         strncpy(ufcComm2Text, newValue, 2);
-        ufcComm2Text[2] = '\0'; 
+        ufcComm2Text[2] = '\0';  // Korrektur des Fehlers
         updateComm2Display();
     }
 }
@@ -62,7 +62,7 @@ void updateComm1Display() {
     if (strcmp(lastUfcComm1Text, ufcComm1Text) != 0) {
         strcpy(lastUfcComm1Text, ufcComm1Text);
         oledComm1.clearDisplay();
-        oledComm1.setFont(u8x8_font_8x13B_1x2_f);
+        oledComm1.setFont(u8x8_font_inb21_2x4_r);
         oledComm1.setCursor(2, 3);
         oledComm1.print(ufcComm1Text);
     }
@@ -73,7 +73,7 @@ void updateComm2Display() {
     if (strcmp(lastUfcComm2Text, ufcComm2Text) != 0) {
         strcpy(lastUfcComm2Text, ufcComm2Text);
         oledComm2.clearDisplay();
-        oledComm2.setFont(u8x8_font_8x13B_1x2_f);
+        oledComm2.setFont(u8x8_font_inb21_2x4_r);
         oledComm2.setCursor(2, 3);
         oledComm2.print(ufcComm2Text);
     }
@@ -84,7 +84,7 @@ void updateScratchpadDisplay() {
     if (strcmp(lastUfcScratchpadText, ufcScratchpadText) != 0) {
         strcpy(lastUfcScratchpadText, ufcScratchpadText);
         u8x8.clearDisplay();
-        u8x8.setFont(u8x8_font_8x13B_1x2_f);
+        u8x8.setFont(u8x8_font_inb21_2x4_r);
         u8x8.setCursor(0, 2);
         u8x8.print("                      ");
         u8x8.setCursor(0, 2);
@@ -106,20 +106,20 @@ void setup() {
     oledComm2.setI2CAddress(0x3D << 1);
 
     // Fonts setzen
-    oledComm1.setFont(u8x8_font_8x13B_1x2_f);
-    oledComm2.setFont(u8x8_font_8x13B_1x2_f);
+    oledComm1.setFont(u8x8_font_inb21_2x4_r);
+    oledComm2.setFont(u8x8_font_inb21_2x4_r);
     u8x8.begin();
-    u8x8.setFont(u8x8_font_8x13B_1x2_f);
+    u8x8.setFont(u8x8_font_inb21_2x4_r);
 
     // Start-Nachrichten
     oledComm1.setCursor(0, 1);
-    oledComm1.print("COMM1 READY");
+    oledComm1.print(" ");
 
     oledComm2.setCursor(0, 1);
-    oledComm2.print("COMM2 READY");
+    oledComm2.print(" ");
 
     u8x8.setCursor(0, 2);
-    u8x8.print("UFC Scratchpad ready!");
+    u8x8.print("MILKRIS' UFC");
 
     delay(2000);
     updateComm1Display();
