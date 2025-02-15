@@ -1,3 +1,5 @@
+// DCS-AV-8B-UFC by MilKris
+// LICENSE: Creative Commons Attribution-NonCommercial 4.0 International Public License
 #include <SPI.h>
 #include <Wire.h>
 #include <U8x8lib.h>
