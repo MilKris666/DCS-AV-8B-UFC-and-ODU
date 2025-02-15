@@ -1,4 +1,4 @@
-![Alt text](AV-8B-UFC-TEST.jpg)
+
 
 !! WARNING: THIS IS WIP !!
 
