@@ -2,7 +2,7 @@
 
 !! WARNING: THIS IS WIP !!
 
-DEMO OF TEH DISPLAYS: https://www.youtube.com/watch?v=W0s75fGMnQM
+Demo of the Displays: https://www.youtube.com/watch?v=W0s75fGMnQM
 
 UFC in Action: https://www.youtube.com/watch?v=CgBkxpUBW7E
 
