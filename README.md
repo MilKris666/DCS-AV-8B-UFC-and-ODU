@@ -1,4 +1,6 @@
 !! WARNING: THIS IS WIP !!
+
+DONATE: Feel free to say thanks... https://www.paypal.com/donate/?hosted_button_id=XG6RA9RWPM84Y
  
 Here is my Arduino code for the DCS AV-8B UFC. It displays the UFC Scratchpad data on an SSD1322 OLED, 
 while the two UFC Comm Preset Displays are shown on two SSD1306 OLED screens. Additionally, it makes the Master Caution and Master Warning LEDs blink accordingly.
