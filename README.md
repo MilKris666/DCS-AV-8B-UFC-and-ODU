@@ -9,8 +9,9 @@ UFC in Action: https://www.youtube.com/watch?v=CgBkxpUBW7E
 DONATE: Feel free to say thanks... https://www.paypal.com/donate/?hosted_button_id=XG6RA9RWPM84Y
  
 Here is my Arduino code for the DCS AV-8B UFC. The code is still a work in progress, and the font is not final. 
-Once everything is finished, I will, of course, publish all files for 3D printing, the Arduino code, and a detailed build guide.It displays the UFC Scratchpad data on an SSD1322 OLED, 
-while the two UFC Comm Preset Displays are shown on two SSD1306 OLED screens. Additionally, it makes the Master Caution and Master Warning LEDs blink accordingly.
+Once everything is finished, I will, of course, publish all files for 3D printing, the Arduino code, and a detailed build guide.
+
+The code displays the UFC Scratchpad data on an SSD1322 OLED, while the two UFC Comm Preset Displays are shown on two SSD1306 OLED screens. Additionally, it makes the Master Caution and Master Warning LEDs blink accordingly.
 
 
 
