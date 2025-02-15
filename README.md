@@ -1,5 +1,9 @@
 !! WARNING: THIS IS WIP !!
 
+DEMO OF TEH DISPLAYS: https://www.youtube.com/watch?v=W0s75fGMnQM
+
+UFC in Action: https://www.youtube.com/watch?v=CgBkxpUBW7E
+
 DONATE: Feel free to say thanks... https://www.paypal.com/donate/?hosted_button_id=XG6RA9RWPM84Y
  
 Here is my Arduino code for the DCS AV-8B UFC. It displays the UFC Scratchpad data on an SSD1322 OLED, 
