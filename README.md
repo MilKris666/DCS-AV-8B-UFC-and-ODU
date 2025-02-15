@@ -33,3 +33,4 @@ SSD1322 SPI OLED: https://www.amazon.de/OLED-Display-SSD1322-Grafik-LCD-Modul-Pa
 
 SSD1306 I²C OLED: https://www.amazon.de/AZDelivery-Display-Arduino-Raspberry-gratis/dp/B01L9GC470?th=1
 
+LICENSE: Creative Commons Attribution-NonCommercial 4.0 International Public License
