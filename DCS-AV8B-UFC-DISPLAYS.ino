@@ -1,6 +1,6 @@
 #include <SPI.h>
 #include <Wire.h>
-#include <U8x8lib.h>
+#include <U8X8lib.h>
 #define DCSBIOS_IRQ_SERIAL
 #include "DcsBios.h"
 
@@ -25,6 +25,11 @@ char ufcComm2Text[3] = " ";
 char lastUfcComm2Text[3] = " ";
 char ufcScratchpadText[13] = " ";
 char lastUfcScratchpadText[13] = " ";
+
+// Funktion zur Zentrierung des Textes auf dem Display
+int getCenteredPosition(int displayWidth, int textLength, int charWidth) {
+    return (displayWidth - (textLength * charWidth)) / (2 * charWidth);
+}
 
 // Callback für UFC Comm1 Display
 void onUfcComm1DisplayChange(char* newValue) {
@@ -61,18 +66,20 @@ DcsBios::StringBuffer<12> ufcScratchpadBuffer(0x7976, onUfcScratchpadChange);
 
 // OLED-Update für Comm1 Display
 void updateComm1Display() {
-    oledComm1.clearDisplay();
+    oledComm1.clear();
     oledComm1.setFont(u8x8_font_inb21_2x4_r);
-    oledComm1.setCursor(2, 3);
+    int cursorPos = getCenteredPosition(16, strlen(ufcComm1Text), 2);
+    oledComm1.setCursor(cursorPos + 3, 3);
     oledComm1.print(ufcComm1Text);
     oledComm1.refreshDisplay();
 }
 
 // OLED-Update für Comm2 Display
 void updateComm2Display() {
-    oledComm2.clearDisplay();
+    oledComm2.clear();
     oledComm2.setFont(u8x8_font_inb21_2x4_r);
-    oledComm2.setCursor(2, 3);
+    int cursorPos = getCenteredPosition(16, strlen(ufcComm2Text), 2);
+    oledComm2.setCursor(cursorPos + 3, 3);
     oledComm2.print(ufcComm2Text);
     oledComm2.refreshDisplay();
 }
@@ -81,52 +88,46 @@ void updateComm2Display() {
 void updateScratchpadDisplay() {
     u8x8.clearDisplay();
     u8x8.setFont(u8x8_font_inb21_2x4_r);
-    u8x8.setCursor(0, 2);
-    u8x8.print("                      ");
-    u8x8.setCursor(0, 2);
+    int cursorPos = getCenteredPosition(32, strlen(ufcScratchpadText), 2);
+    u8x8.setCursor(cursorPos + 4, 2);
     u8x8.print(ufcScratchpadText);
 }
 
 // Setup-Funktion: Initialisierung von Displays und LEDs
 void setup() {
     DcsBios::setup();
-
-    // I²C starten
     Wire.begin();
-
-    // I²C-Adressen vor `begin()` setzen
     oledComm1.setI2CAddress(0x3C << 1);
     oledComm2.setI2CAddress(0x3D << 1);
-
     oledComm1.begin();
     oledComm2.begin();
     u8x8.begin();
 
-    // Fonts setzen
     oledComm1.setFont(u8x8_font_inb21_2x4_r);
     oledComm2.setFont(u8x8_font_inb21_2x4_r);
     u8x8.setFont(u8x8_font_inb21_2x4_r);
 
-    // Startnachrichten setzen
-    oledComm1.setCursor(0, 1);
-    oledComm1.print("C1");
+    oledComm1.clear();    
+    oledComm1.setCursor(+ 3, 3);
+    oledComm1.print("COM1");
     oledComm1.refreshDisplay();
 
-    oledComm2.setCursor(0, 1);
-    oledComm2.print("C2");
+    oledComm2.clear();
+    oledComm2.setCursor(+ 3, 3);
+    oledComm2.print("COM2");
     oledComm2.refreshDisplay();
 
+    u8x8.clearDisplay();
     u8x8.setCursor(0, 2);
     u8x8.print("UFC BY MILKRIS");
-
+    
     delay(2000);
+    updateScratchpadDisplay();
     updateComm1Display();
     updateComm2Display();
-    updateScratchpadDisplay();
 }
 
 // Haupt-Loop
 void loop() {
     DcsBios::loop();
 }
-
