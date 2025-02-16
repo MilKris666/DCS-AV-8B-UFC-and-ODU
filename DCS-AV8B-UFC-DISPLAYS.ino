@@ -109,16 +109,16 @@ void setup() {
 
     oledComm1.clear();    
     oledComm1.setCursor(+ 3, 3);
-    oledComm1.print("COM1");
+    oledComm1.print(" COM1");
     oledComm1.refreshDisplay();
 
     oledComm2.clear();
     oledComm2.setCursor(+ 3, 3);
-    oledComm2.print("COM2");
+    oledComm2.print(" COM2");
     oledComm2.refreshDisplay();
 
     u8x8.clearDisplay();
-    u8x8.setCursor(0, 2);
+    u8x8.setCursor(+ 4, 2);
     u8x8.print("UFC BY MILKRIS");
     
     delay(2000);
