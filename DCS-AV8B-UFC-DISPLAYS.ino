@@ -1,10 +1,12 @@
-// DCS-AV-8B-UFC by MilKris
-// LICENSE: Creative Commons Attribution-NonCommercial 4.0 International Public License
 #include <SPI.h>
 #include <Wire.h>
 #include <U8x8lib.h>
 #define DCSBIOS_IRQ_SERIAL
 #include "DcsBios.h"
+
+// DCS-AV-8B-UFC by MilKris
+// LICENSE: Creative Commons Attribution-NonCommercial 4.0 International Public License
+
 
 // SSD1322 (SPI) für UFC Scratchpad Display (CS: 10, DC: 9, RESET: 8)
 U8X8_SSD1322_NHD_256X64_4W_HW_SPI u8x8(10, 9, 8);
@@ -61,7 +63,7 @@ DcsBios::StringBuffer<12> ufcScratchpadBuffer(0x7976, onUfcScratchpadChange);
 // OLED-Update für Comm1 Display
 void updateComm1Display() {
     oledComm1.clearDisplay();
-    oledComm1.setFont(u8x8_font_inb21_2x4_r);
+    oledComm1.setFont(u8x8_font_8x13B_1x2_f);
     oledComm1.setCursor(2, 3);
     oledComm1.print(ufcComm1Text);
     oledComm1.refreshDisplay();
@@ -70,7 +72,7 @@ void updateComm1Display() {
 // OLED-Update für Comm2 Display
 void updateComm2Display() {
     oledComm2.clearDisplay();
-    oledComm2.setFont(u8x8_font_inb21_2x4_r);
+    oledComm2.setFont(u8x8_font_8x13B_1x2_f);
     oledComm2.setCursor(2, 3);
     oledComm2.print(ufcComm2Text);
     oledComm2.refreshDisplay();
@@ -79,7 +81,7 @@ void updateComm2Display() {
 // OLED-Update für das Scratchpad Display
 void updateScratchpadDisplay() {
     u8x8.clearDisplay();
-    u8x8.setFont(u8x8_font_inb21_2x4_r);
+    u8x8.setFont(u8x8_font_8x13B_1x2_f);
     u8x8.setCursor(0, 2);
     u8x8.print("                      ");
     u8x8.setCursor(0, 2);
@@ -104,7 +106,7 @@ void setup() {
     // Fonts setzen
     oledComm1.setFont(u8x8_font_inb21_2x4_r);
     oledComm2.setFont(u8x8_font_inb21_2x4_r);
-    u8x8.setFont(u8x8_font_inb21_2x4_r);
+    u8x8.setFont(u8x8_font_8x13B_1x2_f);
 
     // Startnachrichten setzen
     oledComm1.setCursor(0, 1);
