@@ -1,6 +1,6 @@
 #include <SPI.h>
 #include <Wire.h>
-#include <U8X8lib.h>
+#include <U8x8lib.h>
 #define DCSBIOS_IRQ_SERIAL
 #include "DcsBios.h"
 
