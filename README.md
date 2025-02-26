@@ -1,8 +1,9 @@
+![Alt text](UFC_and_ODU_Test.jpg)
 ![Alt text](AV-8B-UFC_TEST.jpg)
 
 !! WARNING: THIS IS WIP !!
 
-Demo of the Displays: https://www.youtube.com/watch?v=W0s75fGMnQM
+Demo of the Displays: [https://www.youtube.com/watch?v=W0s75fGMnQM](https://youtu.be/jxWg-S5tsgc)
 
 UFC in Action: https://www.youtube.com/watch?v=CgBkxpUBW7E
 
